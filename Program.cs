@@ -13,11 +13,11 @@ class Program
         if (playerBattingFirst){
             playerScore = PlayInnings("Player", numberOfPlayers);
             System.Console.WriteLine($"Target is {playerScore}");
-            pcScore = PlayInnings("PC", numberOfPlayers, playerScore);
+            pcScore = PlayInnings("PC", numberOfPlayers, playerScore+1);
         }else{
             pcScore = PlayInnings("PC", numberOfPlayers);
             System.Console.WriteLine($"Target is {pcScore}");
-            playerScore = PlayInnings("Player", numberOfPlayers,pcScore);
+            playerScore = PlayInnings("Player", numberOfPlayers,pcScore+1);
         }
 
         DetermineWinner(playerScore, pcScore);
