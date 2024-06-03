@@ -8,7 +8,19 @@ class Program
         Console.WriteLine("Welcome to Finger Cricket Game!!!!");
 
         int numberOfPlayers = GetNumberOfPlayers(); 
-        bool battingFirst = ConductToss();
+        bool playerBattingFirst = ConductToss();
+        int playerScore, pcScore;
+        if (playerBattingFirst){
+            playerScore = PlayInnings("Player", numberOfPlayers);
+            System.Console.WriteLine($"Target is {playerScore}");
+            pcScore = PlayInnings("PC", numberOfPlayers, playerScore);
+        }else{
+            pcScore = PlayInnings("PC", numberOfPlayers);
+            System.Console.WriteLine($"Target is {pcScore}");
+            playerScore = PlayInnings("Player", numberOfPlayers,pcScore);
+        }
+
+        DetermineWinner(playerScore, pcScore);
     }
 
     static int GetNumberOfPlayers(){
@@ -59,6 +71,99 @@ class Program
                 System.Console.WriteLine($"PC has decided to {pcDecision}. You will bat Now!");
                 return true;
             };
+        }
+    }
+
+    static int PlayInnings(string team, int numberOfPlayers, int target = -1){
+        int teamScore = 0;
+        System.Console.WriteLine($"{team} is Batting...");
+
+        for (int i = 1; i <= numberOfPlayers ; i++ ){
+            teamScore += PlayPlayerInnings(team, i, teamScore, target-teamScore);
+        }
+        return teamScore;        
+    }
+
+    static int PlayPlayerInnings(string team, int playerNumber, int teamScore, int runsNeeded = -1)
+    {
+        int playerRun = 0;
+        Console.WriteLine($"Player number {playerNumber} of {team} is batting....");
+        while (true)
+        {
+            if (team == "Player")
+            {
+                int bat;
+                while (true)
+                {
+                    Console.WriteLine("Enter your turn (0-6):");
+                    bat = Convert.ToInt32(Console.ReadLine());
+                    if (bat >= 0 && bat <= 6) break;
+                    else Console.WriteLine("Invalid input. Please enter a number between 0 and 6.");
+                }
+
+                int ball = random.Next(7);
+                Console.WriteLine($"Bowler bowled {ball}");
+                if (bat == ball)
+                {
+                    Console.WriteLine($"Player number {playerNumber} of {team} is out");
+                    break;
+                }
+                else
+                {
+                    playerRun += bat;
+                    Console.WriteLine($"Player number {playerNumber} scored {bat} runs. Team Score: {playerRun + teamScore}");
+                }
+                if (runsNeeded > 0 && playerRun > runsNeeded)
+                {
+                    break;
+                }
+            }
+            else
+            {
+                int ball;
+                while (true)
+                {
+                    Console.WriteLine("Enter your turn (0-6):");
+                    ball = Convert.ToInt32(Console.ReadLine());
+                    if (ball >= 0 && ball <= 6) break;
+                    else Console.WriteLine("Invalid input. Please enter a number between 0 and 6.");
+                }
+
+                int bat = random.Next(7);
+                Console.WriteLine($"Bowler bowled {ball}");
+                if (bat == ball)
+                {
+                    Console.WriteLine($"Player number {playerNumber} of {team} is out");
+                    break;
+                }
+                else
+                {
+                    playerRun += bat;
+                    Console.WriteLine($"Player number {playerNumber} scored {bat} runs. Team Score: {playerRun + teamScore}");
+                }
+                if (runsNeeded > 0 && playerRun > runsNeeded)
+                {
+                    break;
+                }
+            }
+        }
+        return playerRun;
+    }
+
+
+    static void DetermineWinner(int playerScore, int pcScore)
+    {
+        if (playerScore > pcScore)
+        {
+            Console.WriteLine($"Congratulations! You won by {playerScore - pcScore} runs.");
+        }
+        else if (pcScore > playerScore)
+        {
+            Console.WriteLine($"PC won by {pcScore - playerScore} runs.");
+        }
+        else
+        {
+            Console.WriteLine("It's a tie!");
         }
     }
 }
