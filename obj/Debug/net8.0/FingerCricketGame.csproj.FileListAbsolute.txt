@@ -1,0 +1,15 @@
+C:\Users\jubay\FingerCricketGame\bin\Debug\net8.0\FingerCricketGame.exe
+C:\Users\jubay\FingerCricketGame\bin\Debug\net8.0\FingerCricketGame.deps.json
+C:\Users\jubay\FingerCricketGame\bin\Debug\net8.0\FingerCricketGame.runtimeconfig.json
+C:\Users\jubay\FingerCricketGame\bin\Debug\net8.0\FingerCricketGame.dll
+C:\Users\jubay\FingerCricketGame\bin\Debug\net8.0\FingerCricketGame.pdb
+C:\Users\jubay\FingerCricketGame\obj\Debug\net8.0\FingerCricketGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jubay\FingerCricketGame\obj\Debug\net8.0\FingerCricketGame.AssemblyInfoInputs.cache
+C:\Users\jubay\FingerCricketGame\obj\Debug\net8.0\FingerCricketGame.AssemblyInfo.cs
+C:\Users\jubay\FingerCricketGame\obj\Debug\net8.0\FingerCricketGame.csproj.CoreCompileInputs.cache
+C:\Users\jubay\FingerCricketGame\obj\Debug\net8.0\FingerCricketGame.sourcelink.json
+C:\Users\jubay\FingerCricketGame\obj\Debug\net8.0\FingerCricketGame.dll
+C:\Users\jubay\FingerCricketGame\obj\Debug\net8.0\refint\FingerCricketGame.dll
+C:\Users\jubay\FingerCricketGame\obj\Debug\net8.0\FingerCricketGame.pdb
+C:\Users\jubay\FingerCricketGame\obj\Debug\net8.0\FingerCricketGame.genruntimeconfig.cache
+C:\Users\jubay\FingerCricketGame\obj\Debug\net8.0\ref\FingerCricketGame.dll
