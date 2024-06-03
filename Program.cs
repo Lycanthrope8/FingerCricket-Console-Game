@@ -29,10 +29,10 @@ class Program
     }
 
     static bool ConductToss(){
-        string playerCall;
+        string? playerCall;
         System.Console.WriteLine("Its Toss Time. \"heads\" or \"tails\"?");
         while(true){
-            playerCall = Console.ReadLine().ToLower();
+            playerCall = Console.ReadLine()?.ToLower();
             if(playerCall == "heads" || playerCall ==  "tails"){
                 break;
             }else{
@@ -49,7 +49,7 @@ class Program
 1. Batting
 2. Balling");
             while(true){
-                string choice = Console.ReadLine();
+                string? choice = Console.ReadLine();
                 if (choice == "1") return true;
                 else if (choice == "2") return false;
                 else {
