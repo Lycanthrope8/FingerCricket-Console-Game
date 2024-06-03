@@ -80,6 +80,9 @@ class Program
 
         for (int i = 1; i <= numberOfPlayers ; i++ ){
             teamScore += PlayPlayerInnings(team, i, teamScore, target-teamScore);
+            if (target > 0 && teamScore >= target) {
+                break; 
+            }
         }
         return teamScore;        
     }
