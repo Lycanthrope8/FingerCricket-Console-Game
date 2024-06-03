@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FingerCricketGame")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d44bae75de52456e10f94789e78c2446fab6231f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6678a298f49aeb562eace4305c6f2d8dda0ff3ae")]
 [assembly: System.Reflection.AssemblyProductAttribute("FingerCricketGame")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FingerCricketGame")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

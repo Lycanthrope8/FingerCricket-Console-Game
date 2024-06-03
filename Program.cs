@@ -9,7 +9,6 @@ class Program
 
         int numberOfPlayers = GetNumberOfPlayers(); 
         bool battingFirst = ConductToss();
-        System.Console.WriteLine(battingFirst);
     }
 
     static int GetNumberOfPlayers(){
@@ -18,8 +17,17 @@ class Program
     }
 
     static bool ConductToss(){
+        string playerCall;
         System.Console.WriteLine("Its Toss Time. \"heads\" or \"tails\"?");
-        string playerCall = Console.ReadLine().ToLower();
+        while(true){
+            playerCall = Console.ReadLine().ToLower();
+            if(playerCall == "heads" || playerCall ==  "tails"){
+                break;
+            }else{
+                System.Console.WriteLine("Invalid choice. Please enter \"heads\" or \"tails\".");
+            }
+
+        }
         string[] tossOptions = { "heads", "tails" };
         System.Console.WriteLine("Spinning the Coin!!!!!!!");
         string tossResult = tossOptions[random.Next(2)];
